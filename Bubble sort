@@ -1,0 +1,44 @@
+import java.util.Scanner;
+class Bubble{
+    public static void Bubblesort(int arr[])
+    {
+      for(int i=0;i<arr.length-1;i++)//length 4 loops run 3 (0 to 2)
+          {
+              for(int j=0;j<arr.length-1-i;j++)//same looping skip last digit of i already Swap.
+                  {
+                      if(arr[j]>arr[j+1])
+                      {
+                          int temp=0;
+                          temp=arr[j];
+                          arr[j]=arr[j+1];
+                          arr[j+1]=temp;
+                      }
+                  }
+          }
+    }
+public static void Printsort(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+    }
+    public static void main(String args[])
+    {
+        int arr[]={9,8,2,5,1,0};//8,2,5,9
+        Bubblesort(arr);
+        Printsort(arr);
+        System.out.println("Enter lenth of array then array number");
+        Scanner s=new Scanner(System.in);
+        int len=s.nextInt();
+        int arr1[]=new int[len];
+        
+            for(int i=0;i<len;i++)
+                {arr1[i]=s.nextInt();}
+        Printsort(arr1);
+        Bubblesort(arr1);
+        System.out.println("sorting user input array below!");
+        Printsort(arr1);
+            //System.out.print(arr1[i]+" ");
+        
+        
+    }
+}
