@@ -1,0 +1,42 @@
+// Selection sort work on selecting the position which have minimum value from complete array then at the end move the minimum value to in start of the Array.
+import java.util.Scanner;
+class Selection{
+
+    public static void selectionsort(int arr[])
+    {
+        for(int i=0;i<arr.length-1;i++)//loops run total length of array-1.
+            { int min=i;// Supposed the oth position have smallest value.
+              for(int j=i+1;j<arr.length;j++)//both loops should run with same round.
+                  {
+                      if(arr[min]>arr[j])//update the min Position if min value found.
+                          min=j;
+                  }
+              if(min!=i)//Swap no need when its already on ith position.
+              {int temp=arr[min];
+              arr[min]=arr[i];
+              arr[i]=temp;// finally put the min value at start with help of min position.}
+            }
+        System.out.println("Selecting sorting completed");
+    }
+
+    public static void Printselectionsort(int arr[])
+    {
+        for(int i=0;i<arr.length;i++)
+            System.out.print(arr[i]+" ");
+        System.out.println();
+    }
+    public static void main(String arg[])
+    {
+        int arr[]={4,5,2,8};
+        selectionsort(arr);
+        Printselectionsort(arr);
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter lenth for an array then array values by clicking enter for each number");
+        int n=s.nextInt();
+        int arr1[]=new int[n];
+        for(int i=0;i<n;i++)
+            arr1[i]=s.nextInt();
+        selectionsort(arr1);
+        Printselectionsort(arr1);
+    }
+}
